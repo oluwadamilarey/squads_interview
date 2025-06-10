@@ -15,9 +15,8 @@ export const playerStatsApi = createApi({
   tagTypes: ["PlayerStats"],
   endpoints: (builder: any) => ({
     getPlayerStats: builder.query({
-      query: ({ marketType }: { marketType: any }) => {
-        const statType = STAT_TYPES[marketType];
-        return `bet/public-props?marketType=${statType.id}`;
+      query: () => {
+        return `bet/public-props?marketType=player_shots_on_target`;
       },
       providesTags: ["PlayerStats"],
       keepUnusedDataFor: 30, // 30 seconds cache

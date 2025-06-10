@@ -37,7 +37,7 @@ export function SquadsSection() {
         </ScrollReveal>
 
         <div className="flex flex-row md:grid-cols-3 gap-8">
-          {squads.map((squad, index) => (
+          {[12].map((squad, index) => (
             <PlayerCard
               playerName="Erling Halland"
               team="Manchester City"
