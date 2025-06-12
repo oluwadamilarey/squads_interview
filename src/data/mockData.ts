@@ -1,4 +1,4 @@
-import { Player, Squad } from "@/types";
+import { Squad } from "@/types";
 
 export const players = [
   {

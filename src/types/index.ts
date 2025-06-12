@@ -205,10 +205,9 @@ export interface UIState {
   };
 }
 
-// Redux Types
 export interface RootState {
-  squadsApi: any;
+  // squadsApi: any;
   ui: UIState;
 }
 
-export type AppDispatch = any;
+export type AppDispatch = (action: unknown) => void;

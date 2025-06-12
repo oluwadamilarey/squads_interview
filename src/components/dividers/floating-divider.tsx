@@ -8,7 +8,7 @@ const WavyDivider: React.FC = () => {
     <div className="relative w-full overflow-hidden from-slate-900">
       {/* Wave divider */}
       <svg
-        className="w-full h-[60px]"
+        className="w-full h-[90px]"
         viewBox="0 0 1440 60"
         preserveAspectRatio="none"
       >
@@ -34,7 +34,7 @@ const WavyDivider: React.FC = () => {
         }}
       >
         <motion.svg
-          width="29"
+          width="50"
           height="100"
           viewBox="0 0 99 101"
           fill="none"

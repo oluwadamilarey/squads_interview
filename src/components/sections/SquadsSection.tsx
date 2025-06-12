@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollReveal from "@/components/motion/ScrollReveal";
-import { squads } from "@/data/mockData";
+// import { squads } from "@/data/mockData";
 import Image from "next/image";
 import numerous_player_projections from "../../assets/numerous_player_projections.svg";
 import why_the_street from "../../assets/why_the_streets.svg";
@@ -37,8 +37,10 @@ export function SquadsSection() {
         </ScrollReveal>
 
         <div className="flex flex-row md:grid-cols-3 gap-8">
-          {[12].map((squad, index) => (
+          {/* {[12].map((squad, index) => ( */}
+          {Array.from({ length: 3 }).map((_, index) => (
             <PlayerCard
+              key={index} // Added required key prop
               playerName="Erling Halland"
               team="Manchester City"
               position="Forward"

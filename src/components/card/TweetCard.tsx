@@ -15,7 +15,7 @@ const TweetCard = () => {
           <br />
           Messi in their platform
           <br />
-          and it's bursting my
+          and it&apos;s bursting my
           <br />
           brain 😂
         </p>

@@ -1,5 +1,12 @@
 "use client";
 
+import React, { useState } from "react";
+import boots from "../../assets/boots.svg";
+import fireball from "../../assets/fireball.svg";
+import handgloves from "../../assets/hand-gloves.svg";
+import training from "../../assets/training.svg";
+import Image from "next/image";
+
 export interface StatItem {
   label: string;
   value: number;
@@ -14,13 +21,6 @@ export interface SportsStatsBarProps {
   pauseOnHover?: boolean;
 }
 
-import React from "react";
-import boots from "../../assets/boots.svg";
-import fireball from "../../assets/fireball.svg";
-import handgloves from "../../assets/hand-gloves.svg";
-import training from "../../assets/training.svg";
-import Image from "next/image";
-
 const SportsStatsBar: React.FC<SportsStatsBarProps> = ({
   stats,
   className = "",
@@ -28,7 +28,7 @@ const SportsStatsBar: React.FC<SportsStatsBarProps> = ({
   scrollSpeed = 20,
   pauseOnHover = true,
 }) => {
-  const [isPaused, setIsPaused] = React.useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Duplicate stats for seamless loop
   const duplicatedStats = [...stats, ...stats];
@@ -125,12 +125,13 @@ const SportsStatsBarTailwind: React.FC<SportsStatsBarProps> = ({
   scrollSpeed = 20,
   pauseOnHover = true,
 }) => {
-  const [isPaused, setIsPaused] = React.useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Create enough duplicates for smooth infinite scroll
   const extendedStats = Array(4).fill(stats).flat();
 
   const handleMouseEnter = () => {
+    if (isPaused) return;
     if (pauseOnHover) setIsPaused(true);
   };
 

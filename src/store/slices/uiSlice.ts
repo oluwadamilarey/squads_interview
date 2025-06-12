@@ -53,7 +53,7 @@ const uiSlice = createSlice({
     resetFilters: (state) => {
       state.filters = initialState.filters;
     },
-    resetUIState: (state) => {
+    resetUIState: () => {
       return initialState;
     },
   },

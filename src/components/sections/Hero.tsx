@@ -1,7 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
+
+interface FloatingElementProps {
+  children: ReactNode;
+  delay?: number;
+  amplitude?: number;
+  duration?: number;
+  className?: string;
+}
 
 const FloatingElement = ({
   children,
@@ -9,7 +17,7 @@ const FloatingElement = ({
   amplitude = 20,
   duration = 4,
   className = "",
-}: any) => (
+}: FloatingElementProps) => (
   <motion.div
     animate={{
       y: [-amplitude, amplitude, -amplitude],
@@ -243,7 +251,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/3 w-32 h-32 border border-white rounded-full"></div>
         <div className="absolute bottom-1/4 right-1/3 w-24 h-24 border border-white rounded-full"></div>
