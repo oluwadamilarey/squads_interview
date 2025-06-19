@@ -160,7 +160,6 @@ const Hero = () => {
       {/* Main Content */}
       <div className="relative z-10 flex items-center justify-center min-h-[80vh] px-6">
         <div className="text-center max-w-4xl">
-          {/* Slanted Speech Bubbles */}
           <motion.div
             initial={{ opacity: 0, y: 50, rotate: -3 }}
             animate={{ opacity: 1, y: 0, rotate: -2 }}
@@ -172,7 +171,6 @@ const Hero = () => {
             }}
             className="relative mb-6"
           >
-            {/* First bubble - "The New way to" */}
             <motion.div
               whileHover={{
                 scale: 1.05,

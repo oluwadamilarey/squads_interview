@@ -17,7 +17,7 @@ export default function PlayerProjections() {
       <Image
         src={pickmoresectionImg}
         alt="Logo"
-        className="hidden md:block" // Hidden on mobile, visible on md screens and up
+        className="hidden md:block"
         priority
       />
 

@@ -1,4 +1,3 @@
-// services/api.ts
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type {
   BaseQueryFn,
@@ -8,12 +7,10 @@ import type {
 } from "@reduxjs/toolkit/query";
 import type { SquadsApiResponse } from "../types";
 
-// Define types for API parameters
 interface GetPlayerPropsParams {
   marketType: string;
 }
 
-// Define error response type
 interface ApiErrorResponse {
   status: number;
   data?: {
@@ -166,7 +163,6 @@ export const squadsApi = createApi({
   }),
 });
 
-// Export hooks for usage in functional components with proper typing
 export const {
   useGetPlayerShotsOnTargetQuery,
   useGetPlayerPropsQuery,

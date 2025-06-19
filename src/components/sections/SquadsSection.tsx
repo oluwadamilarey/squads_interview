@@ -13,8 +13,15 @@ import word_on_the_street from "../../assets/word_on_the_street.svg";
 import SocialCard from "../card/SocialCard";
 import TweetCard from "../card/TweetCard";
 import PlayerCard from "../card/PlayerCard";
+import { useGetPlayerShotsOnTargetQuery } from "@/services/api";
+import { useMemo } from "react";
+import { useFilters } from "@/hooks/redux";
+import { usePlayerGoals } from "@/hooks/usePlayerStats";
+import SimplePlayerStatsLoader from "../ui/simplePlayerStatsDisplay";
 
 export function SquadsSection() {
+  const { data, isLoading, error, refetch } = usePlayerGoals();
+
   return (
     <section className="py-20 bg-black text-white">
       <div className="container mx-auto px-6">
@@ -36,22 +43,7 @@ export function SquadsSection() {
           </p>
         </ScrollReveal>
 
-        <div className="flex flex-row md:grid-cols-3 gap-8">
-          {/* {[12].map((squad, index) => ( */}
-          {Array.from({ length: 3 }).map((_, index) => (
-            <PlayerCard
-              key={index} // Added required key prop
-              playerName="Erling Halland"
-              team="Manchester City"
-              position="Forward"
-              opponent="Arsenal"
-              matchDate="3rd Mar 11:20 PM"
-              statValue="2.5"
-              statType="Shots on Target"
-              playerImage="/path-to-haaland-image.jpg"
-            />
-          ))}
-        </div>
+        <SimplePlayerStatsLoader statType="GOALS" />
 
         <ScrollReveal className="flex flex-col items-center justify-center mt-16 text-center">
           <h2 className="text-4xl font-bold text-center mb-1">
